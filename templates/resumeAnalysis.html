@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResumeAnaylzer - Resume Analysis</title>
+    <title>ResumeRadar - Resume Analysis</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,254 +13,256 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-      /* Custom Font */
-@font-face {
-    font-family: 'circular-std';
-    src: url('https://nishchal-kansara.web.app/assets/fonts/circular-std.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+        /* Custom Font */
+        @font-face {
+            font-family: 'circular-std';
+            src: url('https://nishchal-kansara.web.app/assets/fonts/circular-std.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-:root {
-     --primary: #30cfd0;           /* Sky Blue */
-    --primary-dark: #330867;      /* Violet */
-    --black: #2e2e2e;
-    --gray-1: #a58e97;
-    --gray-2: #e0f7fa;
-    --white: #ffffff;
-    --body: #ffffff;
-}            /* Light sky blue */
+        :root {
+            --primary: #3155e7;
+            --primary-dark: #2045d6;
+            --black: #010101;
+            --gray-1: #788190;
+            --gray-2: #d3d4db;
+            --white: #ffffff;
+            --body: #fefefe;
+        }
 
-body {
-    font-family: 'circular-std', sans-serif;
-    background-color: var(--body);
-    color: var(--black);
-}
+        body {
+            font-family: 'circular-std', sans-serif;
+            background-color: var(--body);
+        }
 
-/* Section: Navbar */
-.navbar .btn-outline-secondary {
-    border: 1px solid var(--gray-2);
-    color: var(--black);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    padding: 10px 16px;
-}
+        /* Section: Navbar */
+        .navbar .btn-outline-secondary {
+            border: 1px solid var(--gray-2);
+            color: var(--black);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            padding: 10px 16px;
+        }
 
-.navbar {
-    padding: 20px 0;
-}
+        .navbar {
+            padding: 20px 0;
+        }
 
-.nav-link {
-    margin-left: 41px;
-    font-size: 16px;
-    color: var(--gray-1);
-}
+        .nav-link {
+            margin-left: 41px;
+            font-size: 16px;
+            color: var(--gray-1);
+        }
 
-.navbar-nav .nav-link.active {
-    font-weight: bold;
-    color: var(--black);
-}
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: var(--black);
+        }
 
-/* Section: Information */
-section.information h2 {
-    padding: 20px 0;
-}
+        /* Section: Information */
+        section.information h2 {
+            padding: 20px 0;
+        }
 
-section.information h5 {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 48px;
-    color: var(--black);
-}
+        section.information h5 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 48px;
+            color: var(--black);
+        }
 
-section.information p {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 28px;
-    color: var(--gray-1);
-    padding-top: 20px;
-}
+        section.information p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 28px;
+            color: var(--gray-1);
+            padding-top: 20px;
+        }
 
-section.information .info-1 {
-    padding: 50px 0;
-    background: linear-gradient(to right, #30cfd0, #330867);
-    border-radius: 12px;
-    color: var(--white);
-}
+        section.information .info-1 {
+            padding: 50px 0;
+            background: #2C3E50;
+            background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);
+            background: linear-gradient(to right, #4CA1AF, #2C3E50);
+            border-radius: 12px;
+            color: var(--white);
+        }
 
-/* Section: Setup */
-section.setup .info-2 {
-    border: 2px solid transparent;
-    border-radius: 12px;
-     background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #30cfd0, #330867) border-box;
-    margin-top: 20px;
-    padding: 50px;
-}
+        section.setup .info-2 {
+            border: 2px solid transparent;
+            border-radius: 12px;
+            background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #4CA1AF, #2C3E50) border-box;
+            margin-top: 20px;
+            padding: 50px;
+        }
 
-section.setup .disclaimer {
-    border: 2px solid transparent;
+        section.setup .disclaimer {
+            border: 2px solid transparent;
             border-radius: 12px;
             background-color: #f8d7da;
             border-color: #f5c6cb;
             color: #721c24;
             margin-top: 8px;
             padding: 10px;
-}
+        }
 
-section.setup .text-header h3 {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 48px;
-    color: var(--black);
-}
+        section.setup .text-header h3 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 48px;
+            color: var(--black);
+        }
 
-section.setup .text-header p {
-    font-size: 16px;
-    text-align: left;
-    font-weight: 700;
-    line-height: 28px;
-    color: var(--gray-1);
-    padding: 27px 0;
-}
+        section.setup .text-header p {
+            font-size: 16px;
+            text-align: left;
+            font-weight: 700;
+            line-height: 28px;
+            color: var(--gray-1);
+            padding: 27px 0;
+        }
 
-section.setup h5 {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    color: var(--black);
-    padding-bottom: 18px;
-}
+        section.setup h5 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            color: var(--black);
+            padding-bottom: 18px;
+        }
 
-section.setup .desc p {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 22px;
-    color: var(--gray-1);
-    max-width: 284px;
-    margin: 0 auto;
-}
+        section.setup .desc p {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 22px;
+            color: var(--gray-1);
+            max-width: 284px;
+            margin: 0 auto;
+        }
 
-/* Browse File */
-.custom-upload {
-    display: inline-block;
-    padding: 12px 30px;
-    background: linear-gradient(90deg, #30cfd0, #330867);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+        /* Browse File */
+        .custom-upload {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #4CA1AF, #2C3E50);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-.custom-upload:hover {
-       background: linear-gradient(90deg, #330867, #30cfd0);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
+        .custom-upload:hover {
+            background: linear-gradient(90deg, #2C3E50, #4CA1AF);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
 
-input[type="file"] {
-    display: none;
-}
+        input[type="file"] {
+            display: none;
+        }
 
-/* Section: Footer */
-footer {
-    margin-bottom: 22px;
-}
+        /* Section: Footer */
+        footer {
+            margin-bottom: 22px;
+        }
 
-footer a {
-    font-weight: bold;
-    color: var(--black);
-    line-height: 18px;
-}
+        footer a {
+            font-weight: bold;
+            /* font-size: 14px; */
+            color: var(--black);
+            line-height: 18px;
+        }
 
-footer .copy {
-    margin-top: 22px;
-    color: var(--gray-1);
-    line-height: 17px;
-    font-weight: 400;
-}
+        footer .copy {
+            margin-top: 22px;
+            /* font-size: 14px; */
+            color: var(--gray-1);
+            line-height: 17px;
+            font-weight: 400;
+        }
 
-/* Responsive */
-@media (max-width: 576px) {
-    .navbar {
-        padding: 20px 0;
-    }
+        /* Responsive */
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 20px 0;
+            }
 
-    .nav-link {
-        margin-left: 0;
-    }
+            .nav-link {
+                margin-left: 0;
+            }
 
-    section.information .info-1 {
-        margin: 1%;
-    }
+            section.information .info-1 {
+                margin: 1%;
+            }
 
-    section.setup .info-2 {
-        margin: 5% 1% 1% 1%;
-        padding: 50px 0;
-    }
+            section.setup .info-2 {
+                margin: 5% 1% 1% 1%;
+                padding: 50px 0;
+            }
 
-    section.setup .disclaimer {
-        margin: 5% 1% 1% 1%;
-        padding: 15px 0;
-    }
+            section.setup .disclaimer {
+                margin: 5% 1% 1% 1%;
+                padding: 15px 0;
+            }
 
-    footer .copy {
-        margin: 5% 1% 1% 1%;
-        font-size: 12px;
-    }
+            footer .copy {
+                margin: 5% 1% 1% 1%;
+                font-size: 12px;
+            }
 
-    footer a {
-        font-size: 12px;
-    }
-}
+            footer a {
+                font-size: 12px;
+            }
+        }
 
-/* Select */
-.custom-select {
-    width: 100%;
-    padding: 6px 12px;
-    border: 1px solid #330867;
-    border-radius: 8px;
-    background: #fff;
-    color: #333;
-    font-size: 16px;
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        /* Select */
+        .custom-select {
+            width: 100%;
+            padding: 6px 12px;
+            border: 1px solid #198754;
+            border-radius: 8px;
+            background: #fff;
+            color: #333;
+            font-size: 16px;
+            appearance: none;
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.custom-select:focus {
-    border-color: #30cfd0;
-    box-shadow: 0 0 5px rgba(48, 207, 208, 0.5);
-    outline: none;
-}
+        .custom-select:focus {
+            border-color: #4CA1AF;
+            box-shadow: 0 0 5px rgba(76, 161, 175, 0.5);
+            outline: none;
+        }
 
-/* Spinner */
-.loader {
-    border: 8px solid #e0f7fa;
-    border-top: 8px solid;
-    border-image: linear-gradient(90deg, #330867, #89f7fe) 1;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-}
+        /* Spinner */
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid;
+            border-image: linear-gradient(90deg, #2C3E50, #4CA1AF) 1;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -272,7 +274,7 @@ footer .copy {
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="/"><h5>ResumeAnaylzer</h5></a>
+            <a class="navbar-brand" href="/"><h5>ResumeRadar</h5></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -300,7 +302,7 @@ footer .copy {
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                         <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
-                            <li><a class="dropdown-item" href="/aboutProject">About Website</a></li>
+                            <li><a class="dropdown-item" href="/aboutProject">About Project</a></li>
                             <li><a class="dropdown-item" href="/contactUs">Contact Us</a></li>
                         </ul>
                     </div>
@@ -360,7 +362,7 @@ footer .copy {
         <div class="container">
             <div class="row disclaimer">
                 <div class="col-md-12">
-                    <p style=" margin-bottom: 0px; ">Note: Your privacy comes first — we don’t store any personal data, and all uploaded files are automatically deleted from our servers within few minutes.</p>
+                    <p style=" margin-bottom: 0px; ">Note: We don’t store any of your personal data. Your uploaded files are auto-deleted from our server within 10–15 minutes. Privacy first, always.</p>
                 </div>
             </div>
         </div>
@@ -371,7 +373,7 @@ footer .copy {
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="copy">&copy; 2025 ResumeAnaylzer. Made By <a href="/" style="text-decoration: none;">DS</a>.</div>
+                    <div class="copy">&copy; 2025 ResumeRadar. Designed & Developed By <a href="/" style="text-decoration: none;">Insight Strikers</a>.</div>
                 </div>
             </div>
         </div>    

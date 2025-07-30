@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResumeRadar - Cover Letter Builder</title>
+    <title>ResumeRadar - ResumeRadar Response</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -95,17 +95,8 @@
             border-radius: 12px;
             background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #4CA1AF, #2C3E50) border-box;
             margin-top: 20px;
-            padding: 50px;
-        }
+            padding: 12px 6px;
 
-        section.setup .disclaimer {
-            border: 2px solid transparent;
-            border-radius: 12px;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-            color: #721c24;
-            margin-top: 8px;
-            padding: 10px;
         }
 
         section.setup .text-header h3 {
@@ -202,12 +193,7 @@
 
             section.setup .info-2 {
                 margin: 5% 1% 1% 1%;
-                padding: 50px 0;
-            }
-
-            section.setup .disclaimer {
-                margin: 5% 1% 1% 1%;
-                padding: 15px 0;
+                padding: 12px 6px;
             }
 
             footer .copy {
@@ -219,59 +205,10 @@
                 font-size: 12px;
             }
         }
-
-        /* Select */
-        .custom-select {
-            width: 100%;
-            padding: 6px 12px;
-            border: 1px solid #198754;
-            border-radius: 8px;
-            background: #fff;
-            color: #333;
-            font-size: 16px;
-            appearance: none;
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            background-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .custom-select:focus {
-            border-color: #4CA1AF;
-            box-shadow: 0 0 5px rgba(76, 161, 175, 0.5);
-            outline: none;
-        }
-
-        /* Spinner */
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid;
-            border-image: linear-gradient(90deg, #2C3E50, #4CA1AF) 1;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
     </style>
 </head>
 
 <body>
-    <div id="spinner-overlay"
-        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); z-index: 9999; align-items: center; justify-content: center;">
-        <div class="loader"></div>
-    </div>
-
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/"><h5>ResumeRadar</h5></a>
@@ -290,7 +227,7 @@
                             <li><a class="dropdown-item" href="/resumeBuilder">Resume Builder</a></li>
                         </ul>
                     </div>
-                    <a class="nav-link active" href="/coverLetterBuilder">Cover Letter Builder</a>
+                    <a class="nav-link" href="/coverLetterBuilder">Cover Letter Builder</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Career</a>
                         <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
@@ -317,7 +254,7 @@
                 <div class="col-md-12">
                     <div class="text-information">
                         <div class="text-header text-center">
-                            <h1 style="font-weight: bold;">Cover Letter Builder</h1>
+                            <h1 style="font-weight: bold;">ResumeRadar Response</h1>
                         </div>
                     </div>
                 </div>
@@ -329,38 +266,15 @@
         <div class="container">
             <div class="row info-2">
                 <div class="col-md-12">
-                    <div class="text-header text-center">
-                        <h3 style="font-weight: bold;">Build Your Cover Letter!</h3>
-                    </div>
+                    <!-- Get Analysis -->
                     <div class="text-information-1">
-                        <form action="/coverLetterBuild" method="POST">
-                            <label for="resume">Select Uploaded File:</label>
-                            <select name="resume_filename" class="custom-select" required>
-                                {% for file in files %}
-                                <option value="{{ file }}">{{ file }}</option>
-                                {% endfor %}
-                            </select>
-                            <br><br>
-
-                            <label for="resume">Enter Job Description:</label>
-                            <textarea name="job_description" style="width: 100%; height: 400px; resize: none; overflow-y: auto; padding: 12px; font-size: 14px; border-radius: 8px; border: 1px solid black;"> </textarea>
-
-                            <br><br>
-                            <label>Select Type:</label>
-                            <button type="submit" class="btn btn-outline-success btn-user btn-block w-100" value="coverLetterResume" name="build_type">With Resume <i class="bi bi-box-arrow-in-right"></i></button><br><br>
-                            <button type="submit" class="btn btn-outline-success btn-user btn-block w-100" value="coverLetterJD" name="build_type">With Resume + Job Description <i class="bi bi-box-arrow-in-right"></i></button>
-                        </form>
+                        {{ analysis | safe }}
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="setup">
-        <div class="container">
-            <div class="row disclaimer">
-                <div class="col-md-12">
-                    <p style=" margin-bottom: 0px; ">Note: We don’t store any of your personal data. Your uploaded files are auto-deleted from our server within 10–15 minutes. Privacy first, always.</p>
+                    <!-- Get Analysis PDF -->
+                    <form action="/download_pdf" method="POST">
+                        <textarea name="analysis" style="display:none;">{{ analysis | safe }}</textarea>
+                        <button type="submit" class="btn btn-outline-primary btn-user btn-block w-100">Download Response <i class="bi bi-download"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -377,17 +291,6 @@
         </div>    
     </footer>
 </body>
-<script>
-    document.querySelectorAll('form').forEach(function (form) {
-        form.addEventListener('submit', function () {
-            document.getElementById('spinner-overlay').style.display = 'flex';
-        });
-    });
-
-    window.addEventListener('load', function () {
-        document.getElementById('spinner-overlay').style.display = 'none';
-    });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
