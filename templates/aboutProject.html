@@ -13,220 +13,105 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-        /* Custom Font */
-        @font-face {
-            font-family: 'circular-std';
-            src: url('https://nishchal-kansara.web.app/assets/fonts/circular-std.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+     @font-face {
+    font-family: 'circular-std';
+    src: url('https://nishchal-kansara.web.app/assets/fonts/circular-std.ttf') format('truetype');
+}
 
-        :root {
-            --primary: #3155e7;
-            --primary-dark: #2045d6;
-            --black: #010101;
-            --gray-1: #788190;
-            --gray-2: #d3d4db;
-            --white: #ffffff;
-            --body: #fefefe;
-        }
+:root {
+    --primary: #30cfd0;           /* Sky Blue */
+    --primary-dark: #330867;      /* Violet */
+    --black: #2e2e2e;
+    --gray-1: #a58e97;
+    --gray-2: #e0f7fa;
+    --white: #ffffff;
+    --body: #ffffff;
+}
 
-        body {
-            font-family: 'circular-std', sans-serif;
-            background-color: var(--body);
-        }
+body {
+    font-family: 'circular-std', sans-serif;
+    background-color: var(--body);
+    color: var(--black);
+}
 
-        /* Section: Navbar */
-        .navbar .btn-outline-secondary {
-            border: 1px solid var(--gray-2);
-            color: var(--black);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px;
-            padding: 10px 16px;
-        }
+.navbar {
+    padding: 20px 0;
+    background-color: var(--white);
+}
 
-        .navbar {
-            padding: 20px 0;
-        }
+.navbar .btn-outline-secondary {
+    border: 1px solid var(--gray-2);
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 10px 16px;
+}
 
-        .nav-link {
-            margin-left: 41px;
-            font-size: 16px;
-            color: var(--gray-1);
-        }
+.nav-link {
+    margin-left: 41px;
+    font-size: 16px;
+    color: var(--black);
+}
 
-        .navbar-nav .nav-link.active {
-            font-weight: bold;
-            color: var(--black);
-        }
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: var(--black);
+}
 
-        /* Section: Information */
-        section.information h2 {
-            padding: 20px 0;
-        }
+section.information h2,
+section.information h5,
+section.setup h5 {
+    font-weight: 700;
+}
 
-        section.information h5 {
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 48px;
-            color: var(--black);
-        }
+/* Gradient title card with white font */
+section.information .info-1 {
+    padding: 50px 0;
+    border-radius: 12px;
+     background: linear-gradient(to right, #30cfd0, #330867);
+    color: var(--white); /* Title font color white */
+}
 
-        section.information p {
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 28px;
-            color: var(--gray-1);
-            padding-top: 20px;
-        }
+/* Border-only gradient card */
+section.setup .info-2 {
+    margin-top: 20px;
+    padding: 12px 6px;
+    border-radius: 12px;
+    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #30cfd0, #330867) border-box;
+    border: 2px solid transparent;
+    color: var(--black);
+}
 
-        section.information .info-1 {
-            padding: 50px 0;
-            background: #2C3E50;
-            background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);
-            background: linear-gradient(to right, #4CA1AF, #2C3E50);
-            border-radius: 12px;
-            color: var(--white);
-        }
+.text-information-1 p,
+.text-information-1 ol {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--black);
+}
 
-        section.setup .info-2 {
-            border: 2px solid transparent;
-            border-radius: 12px;
-            background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #4CA1AF, #2C3E50) border-box;
-            margin-top: 20px;
-            padding: 12px 6px;
-        }
+footer {
+    margin-bottom: 22px;
+    background-color: var(--white);
+}
 
-        section.setup .text-header h3 {
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 48px;
-            color: var(--black);
-        }
+footer .copy {
+    margin-top: 22px;
+    color: var(--black);
+    font-weight: 400;
+}
 
-        section.setup .text-header p {
-            font-size: 16px;
-            text-align: left;
-            font-weight: 700;
-            line-height: 28px;
-            color: var(--gray-1);
-            padding: 27px 0;
-        }
+@media (max-width: 576px) {
+    .nav-link {
+        margin-left: 0;
+    }
 
-        section.setup h5 {
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 24px;
-            color: var(--black);
-            padding-bottom: 18px;
-        }
-
-        section.setup .desc p {
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 22px;
-            color: var(--gray-1);
-            max-width: 284px;
-            margin: 0 auto;
-        }
-
-        /* Browse File */
-        .custom-upload {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(90deg, #4CA1AF, #2C3E50);
-            color: #fff;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .custom-upload:hover {
-            background: linear-gradient(90deg, #2C3E50, #4CA1AF);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        /* Section: Footer */
-        footer {
-            margin-bottom: 22px;
-        }
-
-        footer a {
-            font-weight: bold;
-            /* font-size: 16px; */
-            color: var(--black);
-            line-height: 18px;
-        }
-
-        footer .copy {
-            margin-top: 22px;
-            /* font-size: 16px; */
-            color: var(--gray-1);
-            line-height: 17px;
-            font-weight: 400;
-        }
-
-        /* Responsive */
-        @media (max-width: 576px) {
-            .navbar {
-                padding: 20px 0;
-            }
-
-            .nav-link {
-                margin-left: 0;
-            }
-
-            section.information .info-1 {
-                margin: 1%;
-            }
-
-            section.setup .info-2 {
-                margin: 5% 1% 1% 1%;
-                padding: 12px 6px;
-            }
-
-            footer .copy {
-                margin: 5% 1% 1% 1%;
-                font-size: 12px;
-            }
-
-            footer a {
-                font-size: 12px;
-            }
-        }
-
-        /* Select */
-        .custom-select {
-            width: 100%;
-            padding: 6px 12px;
-            border: 1px solid #198754;
-            border-radius: 8px;
-            background: #fff;
-            color: #333;
-            font-size: 16px;
-            appearance: none;
-            background-repeat: no-repeat;
-            background-position: right 12px center;
-            background-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .custom-select:focus {
-            border-color: #4CA1AF;
-            box-shadow: 0 0 5px rgba(76, 161, 175, 0.5);
-            outline: none;
-        }
+    footer .copy,
+    footer a {
+        font-size: 12px;
+        color: var(--black);
+    }
+}
     </style>
 </head>
 
