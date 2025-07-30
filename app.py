@@ -441,14 +441,14 @@ def download_pdf():
             self.set_font('Poppins-Bold', '', 10)
             self.set_left_margin(15)
             self.set_right_margin(15)
-            self.cell(0, 10, "ResumeRadar", border=0, align="R")
+            self.cell(0, 10, "ResumeAnalyzer", border=0, align="R")
             self.ln(8)
 
         def footer(self):
             self.set_y(-15)
             self.add_font('Poppins-Bold', '', 'fonts/Poppins-Bold.ttf', uni=True)
             self.set_font('Poppins-Bold', '', 10)
-            self.cell(0, 10, "Developed by Insight Strikers", border=0, align="L")
+            self.cell(0, 10, "Developed by DS", border=0, align="L")
             self.cell(0, 10, f"{self.page_no()}", border=0, align="R")
 
     # Parse HTML
@@ -491,7 +491,7 @@ def download_pdf():
     # Save PDF
     timestamp = datetime.datetime.now().strftime("%H%M%S%d%m%Y")
     output_path = os.path.join(TEMP_DIR, f"resumeradar_pdf_{timestamp}.pdf")
-    # output_path = f"E:/CE_79_Nishchal_Kansara/Python_Project/ResumeRadar1/userFiles/resumeradar_pdf_{timestamp}.pdf"
+  
     pdf.output(output_path)
 
     return send_file(output_path, as_attachment=True)
