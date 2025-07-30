@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResumeAnaylzer - Mock Interview Preparation</title>
+    <title>ResumeAnaylzer - ResumeAnaylzer Query Response</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-      /* Custom Font */
+     /* Custom Font */
 @font-face {
     font-family: 'circular-std';
     src: url('https://nishchal-kansara.web.app/assets/fonts/circular-std.ttf') format('truetype');
@@ -22,13 +22,13 @@
 }
 
 :root {
-     --primary: #30cfd0;           /* Sky Blue */
-    --primary-dark: #330867;      /* Violet */
+    --primary: #30cfd0;          /* Sky Blue */
+    --primary-dark: #330867;     /* Violet */
     --black: #2e2e2e;
-    --gray-1: #a58e97;
-    --gray-2: #e0f7fa;
+    --gray-1: #5b7a99;           /* Cool gray */
+    --gray-2: #dcedf8;           /* Light blue border */
     --white: #ffffff;
-    --body: #ffffff;            /* Clean white background */
+    --body: #e0f7fa;             /* Very light cyan */
 }
 
 body {
@@ -83,7 +83,7 @@ section.information p {
 
 section.information .info-1 {
     padding: 50px 0;
-   background: linear-gradient(to right, #30cfd0, #330867);
+    background: linear-gradient(to right, #89f7fe, #330867);
     border-radius: 12px;
     color: var(--white);
 }
@@ -92,19 +92,10 @@ section.information .info-1 {
 section.setup .info-2 {
     border: 2px solid transparent;
     border-radius: 12px;
-     background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to right, #30cfd0, #330867) border-box;
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(to right, #89f7fe, #330867) border-box;
     margin-top: 20px;
-    padding: 50px;
-}
-
-section.setup .disclaimer {
-   border: 2px solid transparent;
-            border-radius: 12px;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-            color: #721c24;
-            margin-top: 8px;
-            padding: 10px;
+    padding: 12px 6px;
 }
 
 section.setup .text-header h3 {
@@ -199,12 +190,7 @@ footer .copy {
 
     section.setup .info-2 {
         margin: 5% 1% 1% 1%;
-        padding: 50px 0;
-    }
-
-    section.setup .disclaimer {
-        margin: 5% 1% 1% 1%;
-        padding: 15px 0;
+        padding: 12px 6px;
     }
 
     footer .copy {
@@ -217,58 +203,11 @@ footer .copy {
     }
 }
 
-/* Select */
-.custom-select {
-    width: 100%;
-    padding: 6px 12px;
-    border: 1px solid #330867;
-    border-radius: 8px;
-    background: #fff;
-    color: #333;
-    font-size: 16px;
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.custom-select:focus {
-    border-color: #30cfd0;
-    box-shadow: 0 0 5px rgba(48, 207, 208, 0.5);
-    outline: none;
-}
-
-/* Spinner */
-.loader {
-    border: 8px solid #e0f7fa;
-    border-top: 8px solid;
-    border-image: linear-gradient(90deg, #330867, #89f7fe) 1;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
     </style>
 </head>
 
 <body>
-    <div id="spinner-overlay"
-        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); z-index: 9999; align-items: center; justify-content: center;">
-        <div class="loader"></div>
-    </div>
-
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/"><h5>ResumeAnaylzer</h5></a>
@@ -289,7 +228,7 @@ footer .copy {
                     </div>
                     <a class="nav-link" href="/coverLetterBuilder">Cover Letter Builder</a>
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Career</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Career</a>
                         <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
                             <li><a class="dropdown-item" href="/mockInterviewPreparation">Interview Preparation</a></li>
                             <li><a class="dropdown-item" href="/careerOpportunities">Career Opportunities</a></li>
@@ -314,7 +253,7 @@ footer .copy {
                 <div class="col-md-12">
                     <div class="text-information">
                         <div class="text-header text-center">
-                            <h1 style="font-weight: bold;">Mock Interview Preparation</h1>
+                            <h1 style="font-weight: bold;">ResumeAnaylzer Query Response</h1>
                         </div>
                     </div>
                 </div>
@@ -326,38 +265,20 @@ footer .copy {
         <div class="container">
             <div class="row info-2">
                 <div class="col-md-12">
-                    <div class="text-header text-center">
-                        <h3 style="font-weight: bold;">Get Ready With Mock Interview!</h3>
-                    </div>
+                    <!-- Get Analysis -->
                     <div class="text-information-1">
-                        <form action="/mockInterview" method="POST">
-                            <label for="resume">Select Uploaded File:</label>
-                            <select name="resume_filename" class="custom-select" required>
-                                {% for file in files %}
-                                <option value="{{ file }}">{{ file }}</option>
-                                {% endfor %}
-                            </select>
-                            <br><br>
+                        {% if search_url %}
+                            <label>Explore Career Opportunities:</label><br>
+                            <a href="{{ search_url }}" target="_blank">{{ search_url }}</a>
+                        {% endif %}
 
-                            <label for="resume">Enter Job Description:</label>
-                            <textarea name="job_description" style="width: 100%; height: 400px; resize: none; overflow-y: auto; padding: 12px; font-size: 14px; border-radius: 8px; border: 1px solid black;"> </textarea>
-
-                            <br><br>
-                            <label>Select Type:</label>
-                            <button type="submit" class="btn btn-outline-success btn-user btn-block w-100" value="mockInterviewResume" name="interview_type">With Resume <i class="bi bi-box-arrow-in-right"></i></button><br><br>
-                            <button type="submit" class="btn btn-outline-success btn-user btn-block w-100" value="mockInterviewResumeJD" name="interview_type">With Resume + Job Description <i class="bi bi-box-arrow-in-right"></i></button>
-                        </form>
+                        {% if linkedin or github %}
+                            <label>Find People on LinkedIn:</label><br>
+                            <a href="{{ linkedin }}" target="_blank">{{ linkedin }}</a><br><br>
+                            <label>Find People on GitHub:</label><br>
+                            <a href="{{ github }}" target="_blank">{{ github }}</a>
+                        {% endif %}
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="setup">
-        <div class="container">
-            <div class="row disclaimer">
-                <div class="col-md-12">
-                    <p style=" margin-bottom: 0px; ">Note: Your privacy comes first — we don’t store any personal data, and all uploaded files are automatically deleted from our servers within few minutes.</p>
                 </div>
             </div>
         </div>
@@ -374,17 +295,6 @@ footer .copy {
         </div>    
     </footer>
 </body>
-<script>
-    document.querySelectorAll('form').forEach(function (form) {
-        form.addEventListener('submit', function () {
-            document.getElementById('spinner-overlay').style.display = 'flex';
-        });
-    });
-
-    window.addEventListener('load', function () {
-        document.getElementById('spinner-overlay').style.display = 'none';
-    });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
